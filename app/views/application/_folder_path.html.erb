@@ -1,0 +1,7 @@
+<nav class="[ grey lighten-4 ]">
+  <div class="[ container ][ nav-wrapper ]">
+    <% @current_folder.path_folders.each do |path_folder| %>
+      <%= link_to(path_folder.name, folder_path(path_folder), class: 'breadcrumb') %>
+    <% end %>
+  </div>
+</nav>

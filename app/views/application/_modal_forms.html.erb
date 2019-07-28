@@ -1,0 +1,44 @@
+<div id="create-note" class="[ modal ]">
+  <div class="[ modal-content ][ row ]">
+    <div class="[ col s12 ]">
+      <h4>Add Note</h4>
+      <%= form_tag({controller: 'folder', action: 'add_note'}, method: 'post', class: '[ row ]') do %>
+        <div class="[ col s12 m2 ][ input-field ]">
+          <%= text_field_tag(nil, "#{@current_folder.name} /", disabled: true, class: '[ right-align ]') %>
+          <%= label_tag(:name, 'Folder') %>
+        </div>
+        <div class="[ col s12 m8 ][ input-field ]">
+          <input placeholder="Note name" type="text" class="validate" name="note[name]">
+          <label for="note[name]">Name</label>
+        </div>
+        <input type="hidden" name="note[folder_id]" value="<%= @current_folder.id %>">
+        <div class="[ col s12 m2 ][ input-field ][ center ]">
+          <button class="[ btn ][ grey darken-4 ][ waves-effect ]">Add</button >
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="create-folder" class="[ modal ]">
+  <div class="[ modal-content ][ row ]">
+    <div class="[ col s12 ]">
+      <h4>Add Folder</h4>
+      <%= form_tag({controller: 'folder', action: 'create'}, method: 'post', class: '[ row ]') do %>
+        <div class="[ col s12 m2 ][ input-field ]">
+          <%= text_field_tag(nil, "#{@current_folder.name} /", disabled: true, class: '[ right-align ]') %>
+          <%= label_tag(:name, 'Folder') %>
+        </div>
+        <div class="[ col s12 m8 ][ input-field ]">
+          <%= text_field_tag('folder[name]', nil, placeholder: 'Folder name') %>
+          <%= label_tag(:name, 'Name') %>
+        </div>
+        <input type="hidden" name="folder[parent_id]" value="<%= @current_folder.id %>">
+        <div class="input-field col s3 m2 center">
+          <button class="[ btn ][ grey darken-4 ][ waves-effect ]">Add</button >
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

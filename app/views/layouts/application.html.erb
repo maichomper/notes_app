@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NotesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+  <%= render 'navigation' %>
+  <%= render 'folder_path' %>
+   
+  <body class="[ grey lighten-5 ]">
+    <%= yield %>
+  </body>
+
+  <%= render 'footer' %>
+</html>

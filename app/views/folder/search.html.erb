@@ -1,0 +1,8 @@
+<div class="[ container ]">
+  <div class="[ row ][ file-container ]">
+    <h6>Descendent Notes</h6>
+    <% @notes.each do |note| %>
+      <%= render partial: 'note', locals: { note: note } %>
+    <% end %>
+  </div>    
+</div>

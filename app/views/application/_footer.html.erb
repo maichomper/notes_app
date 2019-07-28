@@ -1,0 +1,14 @@
+<footer>
+  <%= render 'modal_forms' %>
+
+  <%= javascript_tag do %>
+    var data = <%= @all_folders.to_json.html_safe %>
+    initFolderAutocomplete(data);
+    initModals();
+
+    <% if flash[:error] %>
+      M.toast({html: '<%= flash[:error] %>', classes: '[ red accent-2 ]'})
+    <% end %>
+  <% end %>
+</footer>
+

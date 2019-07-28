@@ -1,0 +1,19 @@
+<div class="[ container ]">
+  <%= render 'folder_actions' %>
+  <div class="[ divider ]"></div>
+
+  <div class="[ row ][ file-container ]">
+    <h6>Folders</h6>
+    <% @current_folder.subfolders.each do |subfolder| %>
+      <%= render partial: 'folder', locals: { folder: subfolder } %>
+    <% end %>
+  </div>
+  <div class="[ divider ]"></div>
+
+  <div class="[ row ][ file-container ]">
+    <h6>Notes</h6>
+    <% @current_folder.notes.each do |note| %>
+      <%= render partial: 'note', locals: { note: note } %>
+    <% end %>
+  </div>
+</div>
